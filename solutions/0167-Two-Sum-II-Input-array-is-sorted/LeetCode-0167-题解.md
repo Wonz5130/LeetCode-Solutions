@@ -1,10 +1,10 @@
-> LeetCode 0167: Two Sum II - Input array is sorted【Python】
+> LeetCode 0167. Two Sum II - Input array is sorted两数之和 II - 输入有序数组【Easy】【Python】【双指针】
 
 ### 题目
 
 [英文题目链接](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
-Given an array of integers that is already ***sorted in ascending order\***, find two numbers such that they add up to a specific target number.
+Given an array of integers that is already ***sorted in ascending order***, find two numbers such that they add up to a specific target number.
 
 The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.
 
@@ -51,7 +51,7 @@ left 指针从头指向尾，right 指针从尾指向头，然后判断两数之
 
 **时间复杂度**：O(n)
 
-### 代码
+### Python代码
 
 ```python
 class Solution(object):
@@ -73,30 +73,6 @@ class Solution(object):
         return []
 ```
 
-### 本地测试版本代码
+### 代码地址
 
-```python
-class Solution(object):
-    def twoSum(self, numbers, target):
-        """
-        :type numbers: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        left = 0  # 从头指向尾
-        right = len(numbers) - 1  # 从尾指向头
-        while left < right:
-            if numbers[left] + numbers[right] == target:
-                return [left + 1, right + 1]
-            elif numbers[left] + numbers[right] > target:
-                right -= 1 
-            else:
-                left += 1 
-        return []
-
-if __name__ == "__main__":
-    array = [2, 7, 11, 15]
-    target = 9
-    print(Solution().twoSum(array, target))
-```
-
+[GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0167-Two-Sum-II-Input-array-is-sorted/0167.py)

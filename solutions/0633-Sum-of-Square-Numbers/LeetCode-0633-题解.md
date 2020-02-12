@@ -1,4 +1,4 @@
-> LeetCode 0633: Sum of Square Numbers平方数之和【Easy】【Python】
+> LeetCode 0633. Sum of Square Numbers平方数之和【Easy】【Python】【双指针】
 
 ### 题目
 
@@ -74,28 +74,7 @@ class Solution(object):
         return False
 ```
 
-### 本地测试版本代码
+### 代码地址
 
-```python
-class Solution(object):
-    def judgeSquareSum(self, c):
-        """
-        :type c: int
-        :rtype: bool
-        """
-        a = 0
-        b = int(c**0.5)+1
-        while a <= b:  # 假如 c = 2, 发现不加 = , 输出 False, 应该输出 True
-            if a*a + b*b == c:
-                return True
-            elif a*a + b*b < c:
-                a += 1
-            else:
-                b -= 1
-        return False
-
-if __name__ == "__main__":
-    c = 5
-    print(Solution().judgeSquareSum(c))
-```
+[GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0633-Sum-of-Square-Numbers/0633.py)
 
