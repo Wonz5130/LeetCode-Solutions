@@ -19,7 +19,7 @@ class Solution(object):
                         res = word
                         max = len(word)
                     elif len(word) == max:
-                        res = min(res, word)  # 长度相同选最小字典序的 word 
+                        res = min(res, word)  # 长度相同则选最小字典序的 word 
                     break
         return res
 
