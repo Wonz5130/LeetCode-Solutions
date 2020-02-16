@@ -10,12 +10,12 @@ class Solution(object):
         temp_pos = 0
         cnt = 0
         for i in range(1, len(intervals)):
-            if intervals[temp_pos][1] > intervals[i][0]:  # 当当前右端点>左端点
-                if intervals[i][1] < intervals[temp_pos][1]:  # 当右端点<当前右端点，表示intervals[i][1]被覆盖在intervals[temp_pos][1]中
-                    temp_pos = i  # 更新temp_pos，选择覆盖范围小的intervals[i][1]
-                cnt += 1
+            if intervals[temp_pos][1] > intervals[i][0]:  # 当当前区间右端点>i区间左端点
+                if intervals[i][1] < intervals[temp_pos][1]:  # 当i区间右端点<当前区间右端点，表示i区间被覆盖在当前区间中
+                    temp_pos = i  # 更新temp_pos，选择覆盖范围小的i区间
+                cnt += 1  # 当前区间右端点>i区间左端点都要计数+1
             else:
-                temp_pos = i  # 当当前右端点<=左端点，表示不重叠，要更新temp_pos
+                temp_pos = i  # 当当前区间右端点<=i区间左端点，表示不重叠，要更新temp_pos
         return cnt
 
 if __name__ == "__main__":
