@@ -104,6 +104,32 @@ class Solution(object):
         return cnt
 ```
 
+### 题外话
+
+网上搜的别人的题解发现代码运行都有问题，总是提示：'list' object has no attribute 'start' 等错误。研究了一下，发现网上题解的代码开头都是：
+
+```python
+class Solution(object):
+    def eraseOverlapIntervals(self, intervals):
+        """
+        :type intervals: List[Interval]
+        :rtype: int
+        """
+```
+
+而现在(2020.02.16)此题的代码开头是：
+
+```python
+class Solution(object):
+    def eraseOverlapIntervals(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: int
+        """
+```
+
+该 intervals 是一个二维列表，没有 start，要按照二维列表来做。照着 `LeetCode-0452-用最少数量的箭引爆气球` 自己写的[题解](https://wonzwang.blog.csdn.net/article/details/104347754)，稍微改一下代码发现就能 AC 这道题了。
+
 ### 代码地址
 
 [GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0435-Non-overlapping-Intervals/0435.py)
