@@ -6,11 +6,10 @@ class Solution(object):
         """
         if not nums:
             return 0
-        dp, prev = 0, 0
+        dp = 0
         sum = -0xFFFFFFFF
         for i in range(len(nums)):
-            dp = nums[i] + (prev if prev > 0 else 0)  # if prev > 0: dp = nums[i] + prev, else: dp = num[i]
-            prev = dp  # update prev every time
+            dp = nums[i] + (dp if dp > 0 else 0)  # if dp > 0: dp = nums[i] + dp, else: dp = nums[i]
             sum = max(sum, dp)
         return sum
         
