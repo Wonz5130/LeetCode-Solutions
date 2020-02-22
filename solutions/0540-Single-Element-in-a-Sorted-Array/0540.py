@@ -16,7 +16,7 @@ class Solution(object):
                 low = mid + 2
         return nums[low]
 
-        # # solution two: adjacent elements equal
+        # # solution two: adjacent elements are equal
         # for i in range(0, len(nums) - 1, 2):  # step = 2
         #     if nums[i] != nums[i + 1]:
         #         return nums[i]
