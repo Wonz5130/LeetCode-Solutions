@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
     def diffWaysToCompute(self, input: str) -> List[int]:
+        # solution: Divide and conquer
         if input.isdigit():  # input only contains digital
             return [int(input)]
         n = len(input)
