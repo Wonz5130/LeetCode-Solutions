@@ -8,7 +8,7 @@ class Solution:
         for vote in votes:
             for i, v in enumerate(vote):
                 score[ord(v) - ord("A")][i] += 1
-                score[ord(v) - ord("A")][-1] = ord("Z") - ord(v) + 1  # sort based on it
+                score[ord(v) - ord("A")][-1] = ord("Z") - ord(v) + 1  # A:26 B:25 ··· sort based on it
         score.sort(reverse=True)
         ans = ""
         for i in range(26):
