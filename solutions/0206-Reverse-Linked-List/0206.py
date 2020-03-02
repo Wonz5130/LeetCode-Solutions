@@ -19,16 +19,16 @@ class Solution:
             pos = pos.next
         return head
 
-        # solution two
-        newHead = None
-        while head:
-            pos = head
-            head = head.next
-            pos.next = newHead
-            newHead = pos
-        return newHead
+        # solution two: two point
+        cur, pre = None, head
+        while pre:
+            pos = pre.next
+            pre.next = cur
+            cur = pre
+            pre = pos
+        return cur
 
-        # solution three: Recursive
+        # solution three: recursion
         if not head or not head.next:
             return head
 
