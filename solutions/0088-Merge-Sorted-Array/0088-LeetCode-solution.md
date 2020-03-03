@@ -2,7 +2,7 @@
 
 ### 题目
 
-[英文题目链接](https://leetcode.com/problems/merge-sorted-array/)
+[LeetCode](https://leetcode.com/problems/merge-sorted-array/)
 
 Given two sorted integer arrays *nums1* and *nums2*, merge *nums2* into *nums1* as one sorted array.
 
@@ -23,7 +23,7 @@ Output: [1,2,2,3,5,6]
 
 ### 翻译
 
-[中文题目链接](https://leetcode-cn.com/problems/merge-sorted-array/submissions/)
+[力扣](https://leetcode-cn.com/problems/merge-sorted-array/)
 
 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
 
@@ -49,9 +49,10 @@ nums2 = [2,5,6],       n = 3
 
 逆序，nums1 从 第 m 元素往前，nums2 从第 n 元素往前，哪个大哪个存在 nums1 的第 n+m-1 位置，然后慢慢从后往前存。最后看一下 nums2 是否还有剩余，如果还有就全部加到 nums1 中。
 
-**时间复杂度**: O(m+n)
+**时间复杂度:** O(m+n)
+**空间复杂度:** O(1)
 
-### Python代码
+##### Python3代码
 
 ```python
 class Solution(object):
@@ -74,19 +75,15 @@ class Solution(object):
             nums1[:n] = nums2[:n]
 ```
 
-### 测试代码
-
-```python
-if __name__ == "__main__":
-    nums1 = [1,2,3,0,0,0]
-    nums2 = [2,5,6]
-    m, n = 3, 3
-    Solution().merge(nums1, m, nums2, n)
-    print(nums1)
-```
+### 代码地址
 
 [GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0088-Merge-Sorted-Array/0088.py)
+
+### 相关题目
+
+[LeetCode 面试题 10.01. Sorted Merge LCCI](https://leetcode-cn.com/problems/sorted-merge-lcci/)
 
 ### 一点疑惑
 
 如果 nums1 = [1,2,3,0,0,0,0]，而 nums2 = [2,5,6]，m = 3，n = 3，那么合并之后的 nums1 = [1,2,2,3,5,6,0]，多余的 0 并没有自动销掉。
+
