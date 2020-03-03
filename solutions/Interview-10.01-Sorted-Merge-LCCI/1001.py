@@ -10,8 +10,7 @@ class Solution:
         # A.sort()
 
         # solution two: two point
-        # B = []
-        if n == 0:
+        if n == 0: # B = []
             return
         i, j, k = m - 1, n - 1, m + n - 1
         while i > -1 and j > -1:  # > -1, if m = 0 or n = 0, then i = -1 or j = -1
