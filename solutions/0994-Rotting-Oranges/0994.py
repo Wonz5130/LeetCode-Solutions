@@ -21,6 +21,9 @@ class Solution:
         
         # bfs
         while q:
+            if fresh == 0:
+                return minute
+                
             size = len(q)
             for i in range(size):
                 x, y = q.pop(0)
@@ -35,7 +38,6 @@ class Solution:
 
         if fresh != 0:
             return -1
-        return minute - 1
 
 if __name__ == "__main__":
     grid = [[2,1,1],[1,1,0],[0,1,1]]
