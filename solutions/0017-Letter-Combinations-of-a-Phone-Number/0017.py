@@ -2,7 +2,7 @@ from typing import List
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        # solution one: dfs
+        # solution one: backtracking
         kbmaps = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
         ans = []
         self.dfs(digits, 0, ans, '', kbmaps)
@@ -16,7 +16,7 @@ class Solution:
         for i in kbmaps[string[index]]:
             self.dfs(string, index + 1, ans, path + i, kbmaps)
     
-        # solution two: loop
+        # solution two: brute force search
         if digits == "":
             return []
         d = {'2' : "abc", '3' : "def", '4' : "ghi", '5' : "jkl", '6' : "mno", '7' : "pqrs", '8' : "tuv", '9' : "wxyz"}
