@@ -1,4 +1,4 @@
-> LeetCode 0121. Best Time to Buy and Sell Stock买卖股票的最佳时机【Easy】【Python】【贪心】
+> LeetCode 0121. Best Time to Buy and Sell Stock买卖股票的最佳时机【Easy】【Python】【贪心】【动态规划】
 
 ### Problem
 
@@ -56,22 +56,25 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 ### 思路
 
+##### 解法一
+
 **贪心**
 
-买入和卖出同时计算，当 buy > price，更新买入价格 buy，当 profit < price - buy，更新利润 profit。
+```
+买入和卖出同时计算。
+当 buy > price，更新买入价格 buy。
+当 profit < price - buy，更新利润 profit。
+```
 
 **时间复杂度:** O(len(prices))
 **空间复杂度:** O(1)
 
-### Python代码
+### Python3代码
 
 ```python
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # solution one: 贪心
         profit, buy = 0, 0x7FFFFFFF
         for price in prices:
             if buy > price:
@@ -79,6 +82,54 @@ class Solution(object):
             if profit < price - buy:
                 profit = price - buy  # 尽量在最大价格卖出股票
         return profit
+```
+
+##### 解法二
+
+**动态规划**
+
+```
+找到状态方程
+
+dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
+解释：前面没有股票，前面有股票现在卖出
+
+dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i])
+解释：前面有股票，前面没有股票现在买入
+
+base case：
+dp[-1][0] = dp[i][0] = 0
+dp[-1][1] = dp[i][1] = -inf
+
+所以 dp[i-1][0] = 0
+dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
+dp[i][1] = max(dp[i-1][1], -prices[i])
+
+i = 0 时，dp[i-1] 不合法。
+所以：
+dp[0][0] = max(dp[-1][0], dp[-1][1] + prices[i])
+         = max(0, -infinity + prices[i])
+         = 0
+dp[0][1] = max(dp[-1][1], dp[-1][0] - prices[i])
+         = max(-infinity, 0 - prices[i]) 
+         = -prices[i]
+```
+
+**空间复杂度:** O(1)
+
+### Python3代码
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # solution two: 动态规划
+        # K = 1
+        dp_i_0 = 0
+        dp_i_1 = float('-inf')  # 负无穷
+        for i in range(len(prices)):
+            dp_i_0 = max(dp_i_0, dp_i_1 + prices[i])  # 前面没有股票，前面有股票现在卖出
+            dp_i_1 = max(dp_i_1, -prices[i])  # 前面有股票，前面没有股票现在买入
+        return dp_i_0
 ```
 
 ### 代码地址
