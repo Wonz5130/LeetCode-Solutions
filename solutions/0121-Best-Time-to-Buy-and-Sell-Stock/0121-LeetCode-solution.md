@@ -141,3 +141,7 @@ class Solution:
 ### 代码地址
 
 [GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0121-Best-Time-to-Buy-and-Sell-Stock/0121.py)
+
+### 参考
+
+[一个方法团灭 6 道股票问题](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/)
