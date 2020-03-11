@@ -69,7 +69,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 **时间复杂度:** O(len(prices))
 **空间复杂度:** O(1)
 
-### Python3代码
+##### Python3代码
 
 ```python
 class Solution:
@@ -121,7 +121,7 @@ dp[0][1] = max(dp[-1][1], dp[-1][0] - prices[i])
 
 **空间复杂度:** O(1)
 
-### Python3代码
+##### Python3代码
 
 ```python
 class Solution:
