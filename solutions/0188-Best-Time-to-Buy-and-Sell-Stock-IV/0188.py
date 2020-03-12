@@ -16,7 +16,7 @@ class Solution:
             return dp_i_0
         
         # k <= len(prices)/2
-        # dp = [[[0] * 2] * (k+1)] * n  # 创建三维数组，这个有问题
+        # dp = [[[0] * 2] * (k+1)] * n  # 创建三维数组，这么初始化三维列表，是浅复制，所以修改其中一个值会同时影响其他的值，所以这种方法不正确
         dp = [[[0] * 2 for _ in range(k+1)] for _ in range(n)]
         for i in range(n):
             for j in range(k, 0, -1):  # 逆序
