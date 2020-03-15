@@ -1,4 +1,4 @@
-> LeetCode 0695. Max Area of Island【Medium】【Python】【DFS】
+> LeetCode 0695. Max Area of Island岛屿的最大面积【Medium】【Python】【DFS】
 
 ### Problem
 
@@ -76,12 +76,14 @@ Given the above grid, return `0`.
 把走过的路都设为 0，找到岛屿的最大面积。
 ```
 
-**时间复杂度:** O(m\*n)
-**空间复杂度:** O(m\*n)
+**时间复杂度:** O(m\*n)，m 为 grid 矩阵的行数，n 为 grid 矩阵的列数。
+**空间复杂度:** O(m\*n)，m 为 grid 矩阵的行数，n 为 grid 矩阵的列数。
 
 ##### Python3代码
 
 ```python
+from typing import List
+
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         self.ans = 0
