@@ -79,7 +79,7 @@ class Solution:
 如果小于 target，就表示该列最大值都要小于 target，所以往右移一列。
 ```
 
-**时间复杂度:** O(max(n, m))，n 为 matrix 矩阵的行数，m 为 matrix 矩阵的列数。
+**时间复杂度:** O(n + m)，n 为 matrix 矩阵的行数，m 为 matrix 矩阵的列数。
 **空间复杂度:** O(1)
 
 ##### Python3代码
