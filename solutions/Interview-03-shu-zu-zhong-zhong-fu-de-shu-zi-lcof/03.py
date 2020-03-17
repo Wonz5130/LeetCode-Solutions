@@ -22,7 +22,7 @@ class Solution:
                 pre = nums[i]
         return -1
 
-        # solution three
+        # solution three: 两个萝卜一个坑
         n = len(nums)
         for i in range(n):
             if nums[i] == i:
