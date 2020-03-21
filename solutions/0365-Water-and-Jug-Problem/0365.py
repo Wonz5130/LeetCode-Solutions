@@ -27,6 +27,6 @@ class Solution:
         import math
         if x + y < z:
             return False
-        if x == 0 or y == 0:
-            return z == 0 or x + y == z
+        if x == z or y == z or x + y == z:
+            return True
         return z % math.gcd(x, y) == 0
