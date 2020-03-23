@@ -66,7 +66,7 @@ class Solution:
             return False
         # equal, then search left and right
         else:
-            return self.dfs(t1.left, t2.left) or self.dfs(t1.right, t2.right)
+            return self.dfs(t1.left, t2.left) and self.dfs(t1.right, t2.right)  # 注意这里是and
 ```
 
 ### 代码地址
