@@ -4,3 +4,6 @@ class Solution:
         for i in range(1, 10**n):
             res.append(i)
         return res
+
+        # 一行代码
+        return list(range(1, 10**n))
