@@ -1,9 +1,9 @@
 from typing import List
+import collections
+import math
 
 class Solution:
     def hasGroupsSizeX(self, deck: List[int]) -> bool:
-        import collections
-        import math
         # Counter统计出来是一个字典
         c = list(collections.Counter(deck).values())
         res = c[0]
