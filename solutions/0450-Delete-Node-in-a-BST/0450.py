@@ -19,7 +19,7 @@ class Solution:
             if root.right == None:
                 return root.left
             # 情况 3：有两个非空子节点，找到左子树的最大值，或者右子树的最小值，取代自己
-            # Python3 需要先有一个 TreeNode
+            # Python3 需要先有一个 TreeNode 对象
             minNode = TreeNode(None)
             minNode = self.getMin(root.right)
             root.val = minNode.val
