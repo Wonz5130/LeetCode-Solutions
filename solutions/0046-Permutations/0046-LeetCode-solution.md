@@ -157,9 +157,9 @@ class Solution:
         return res
 ```
 
-### 代码地址
+### GitHub 链接
 
-[GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0046-Permutations/0046.py)
+[Python](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0046-Permutations/0046.py)
 
 ### 参考
 
