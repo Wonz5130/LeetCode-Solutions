@@ -116,6 +116,51 @@ class Solution:
         return res
 ```
 
+##### 解法四
+
+**回溯**
+
+```
+visited 数组表示是否访问过这个位置。
+这里参考了 labuladong 的算法小抄。
+```
+
+##### Python3代码
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        # solution four: backtracking
+        res = []
+        n = len(nums)
+        visited = [0] * n
+        def backtrack(nums, path):
+            # 1. 递归终止情况
+            if len(path) == n:
+                res.append(path[:])
+                return
+            for i in range(n):
+                # 3. 剪枝
+                # 下面这种方法不够高效
+                # if nums[i] in path:
+                #     continue
+                # 使用 visited 来标记是否已经被访问过
+                if not visited[i]:
+                    visited[i] = 1
+                    # 2. 回溯以及更新 path
+                    path.append(nums[i])
+                    backtrack(nums, path)
+                    path.pop()
+                    visited[i] = 0
+        
+        backtrack(nums, [])
+        return res
+```
+
 ### 代码地址
 
 [GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0046-Permutations/0046.py)
+
+### 参考
+
+[回溯算法解题套路框架](https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/hui-su-suan-fa-xiang-jie-xiu-ding-ban)
