@@ -75,6 +75,6 @@ class Solution:
         return max(l, r) + 1
 ```
 
-### 代码地址
+### GitHub 地址
 
-[GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0543-Diameter-of-Binary-Tree/0543.py)
+[Python](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0543-Diameter-of-Binary-Tree/0543.py)
