@@ -76,7 +76,7 @@ This problem was inspired by [this original tweet](https://twitter.com/mxcl/stat
 前序遍历二叉树，如果当前节点有子树，就交换左右子树。
 ```
 
-##### Python3代码
+##### Python3 代码
 
 ```python
 # Definition for a binary tree node.
@@ -104,6 +104,46 @@ class Solution:
         return root
 ```
 
+##### Go 代码
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func invertTree(root *TreeNode) *TreeNode {
+	// 前序遍历
+	if root == nil {
+		return nil
+	}
+	
+	root.Left, root.Right = root.Right, root.Left
+
+	invertTree(root.Left)
+	invertTree(root.Right)
+
+	return root
+}
+
+func invertTree(root *TreeNode) *TreeNode {
+	// 后序遍历
+	if root == nil {
+		return nil
+	}
+
+	invertTree(root.Left)
+	invertTree(root.Right)
+
+	root.Left, root.Right = root.Right, root.Left
+
+	return root
+}
+```
+
 ##### 解法二
 
 **栈**
@@ -112,7 +152,7 @@ class Solution:
 用栈模拟二叉树。
 ```
 
-##### Python3代码
+##### Python3 代码
 
 ```python
 # Definition for a binary tree node.
@@ -142,6 +182,8 @@ class Solution:
         return root
 ```
 
-### 代码地址
+### GitHub 链接
 
-[GitHub链接](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0226-Invert-Binary-Tree/0226.py)
+- [Python](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0226-Invert-Binary-Tree/0226.py)
+
+- [Go](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0226-Invert-Binary-Tree/0226.go)
