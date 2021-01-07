@@ -1,4 +1,4 @@
-> LeetCode 1038. 把二叉搜索树转换为累加树Binary Search Tree to Greater Sum Tree【Medium】【Python】【二叉树】
+> LeetCode 1038. Binary Search Tree to Greater Sum Tree把二叉搜索树转换为累加树【Medium】【Python】【二叉树】
 
 ## Problem
 
@@ -136,4 +136,4 @@ class Solution:
 
 ## GitHub 链接
 
-[Python]()
+[Python](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/1038-Binary-Search-Tree-to-Greater-Sum-Tree/1038.py)
