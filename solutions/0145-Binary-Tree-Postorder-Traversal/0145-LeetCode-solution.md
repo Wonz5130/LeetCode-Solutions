@@ -158,4 +158,4 @@ class Solution:
 
 ## GitHub 链接
 
-[Python]()
+[Python](https://github.com/Wonz5130/LeetCode-Solutions/blob/master/solutions/0145-Binary-Tree-Postorder-Traversal/0145.py)
